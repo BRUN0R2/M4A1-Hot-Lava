@@ -10,7 +10,7 @@ new pImpulse
 
 public plugin_precache()
 {
-	register_plugin("[REZOMBIE] Weapon: M4a1 Magma", REZP_VERSION_STR, "BRUN0")
+	register_plugin("[REZOMBIE] Weapon: M4A1 Hot Lava", REZP_VERSION_STR, "BRUN0")
 
 	rz_trie_create()
 
