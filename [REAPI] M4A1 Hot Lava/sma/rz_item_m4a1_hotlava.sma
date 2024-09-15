@@ -31,9 +31,9 @@ public rz_items_select_pre(id, pItem)
 	if (rz_player_get(id, RZ_PLAYER_CLASS) != gl_pClass_Human)
 		return RZ_BREAK
 
-	new handle[RZ_MAX_HANDLE_LENGTH]
-	rz_weapon_get(gl_pWeaponImpulse, RZ_WEAPON_HANDLE, handle, charsmax(handle))
-	if (rz_find_weapon_by_classname(id, handle)) return RZ_SUPERCEDE
+	new reference[RZ_MAX_REFERENCE_LENGTH]
+	rz_weapon_get(gl_pWeaponImpulse, RZ_WEAPON_REFERENCE, reference, charsmax(reference))
+	if (rg_has_item_by_name(id, reference)) return RZ_SUPERCEDE
 
 	return RZ_CONTINUE
 }
