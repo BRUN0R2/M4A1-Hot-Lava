@@ -45,5 +45,10 @@ public rz_items_select_post(id, pItem)
 
 	new reference[RZ_MAX_REFERENCE_LENGTH]
 	rz_weapon_get(gl_pWeaponImpulse, RZ_WEAPON_REFERENCE, reference, charsmax(reference))
-	rg_give_custom_item(id, reference, GT_REPLACE, gl_pWeaponImpulse)
+	new pWeapon = rg_give_custom_item(id, reference, GT_REPLACE, gl_pWeaponImpulse)
+
+	if (!is_nullent(pWeapon)) {
+		new WeaponIdType:weaponId = get_member(pWeapon, m_iId);
+		set_member(id, m_rgAmmo, rg_get_weapon_info(weaponId, WI_MAX_ROUNDS), rg_get_weapon_info(weaponId, WI_AMMO_TYPE));
+	}
 }
