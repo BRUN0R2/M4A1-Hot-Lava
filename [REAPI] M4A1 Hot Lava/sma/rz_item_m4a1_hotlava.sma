@@ -32,7 +32,7 @@ public rz_items_select_pre(id, pItem)
 		return RZ_BREAK
 
 	new handle[RZ_MAX_HANDLE_LENGTH]
-	rz_weapon_get(gl_pWeaponImpulse, RZ_WEAPON_HANDLE, handle, charsmax(handle))
+	get_weapon_var(gl_pWeaponImpulse, RZ_WEAPON_HANDLE, handle, charsmax(handle))
 
 	if (rz_find_weapon_by_handler(id, handle)) {
 		return RZ_SUPERCEDE
@@ -47,7 +47,7 @@ public rz_items_select_post(id, pItem)
 		return
 
 	new reference[RZ_MAX_REFERENCE_LENGTH]
-	rz_weapon_get(gl_pWeaponImpulse, RZ_WEAPON_REFERENCE, reference, charsmax(reference))
+	get_weapon_var(gl_pWeaponImpulse, RZ_WEAPON_REFERENCE, reference, charsmax(reference))
 	new pWeapon = rg_give_custom_item(id, reference, GT_REPLACE, gl_pWeaponImpulse)
 
 	if (!is_nullent(pWeapon)) {
