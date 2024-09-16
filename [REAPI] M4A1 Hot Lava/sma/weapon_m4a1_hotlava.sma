@@ -20,18 +20,23 @@ public plugin_precache()
 
 	set_weapon_var(pWeapon, RZ_WEAPON_NAME, "RZ_WEAPON_M4A1_HOTLAVA_NAME")
 	set_weapon_var(pWeapon, RZ_WEAPON_SHORT_NAME, "RZ_WEAPON_M4A1_HOTLAVA_SHORT")
-
 	set_weapon_var(pWeapon, RZ_WEAPON_VIEW_MODEL, V_WEAPON_MODEL)
 	set_weapon_var(pWeapon, RZ_WEAPON_PLAYER_MODEL, P_WEAPON_MODEL)
 	set_weapon_var(pWeapon, RZ_WEAPON_WORLD_MODEL, W_WEAPON_MODEL)
 
+	set_weapon_var(pWeapon, RZ_WEAPON_GENERIC_DAMAGE, 50.0)
+	set_weapon_var(pWeapon, RZ_WEAPON_HEAD_DAMAGE, 150.0)
+	set_weapon_var(pWeapon, RZ_WEAPON_CHEST_DAMAGE,	75.0)
+	set_weapon_var(pWeapon, RZ_WEAPON_STOMACH_DAMAGE, 50.0)
+	set_weapon_var(pWeapon, RZ_WEAPON_ARMS_DAMAGE, 42.0)
+	set_weapon_var(pWeapon, RZ_WEAPON_LEGS_DAMAGE, 35.0)
+
+	set_weapon_var(pWeapon, RZ_WEAPON_KNOCKBACK_POWER, 2.5)
+
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_CYLINDER, true)
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_CYLINDER_COLOR, {255, 90, 10, 255})
-
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER, true)
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER_COLOR, {255, 90, 10, 255})
-
-	set_weapon_var(pWeapon, RZ_WEAPON_KNOCKBACK_POWER, 1.2)
 
 	// Last fire time
 	rz_set_tdata_float(pWeapon, "LastFire", get_gametime())
