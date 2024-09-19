@@ -46,6 +46,9 @@ public plugin_precache()
 
 	// Time to use fire again
 	rz_set_tdata_float(pWeapon, "FireAgain", 6.0)
+
+	// Damage that fire will cause
+	rz_set_tdata_float(pWeapon, "FireDamage", 120.0)
 }
 
 public plugin_init() {
@@ -81,7 +84,7 @@ public plugin_end() {
 	new Float:pGameTime = get_gametime();
 
 	if (rz_get_tdata_float(pImpulse, "LastFire") <= pGameTime) {
-		rz_grenade_set_user_fire(pVictim, pAttacker, rz_get_tdata_float(pImpulse, "FireTime"))
+		rz_grenade_set_user_fire(pVictim, pAttacker, rz_get_tdata_float(pImpulse, "FireTime"), rz_get_tdata_float(pImpulse, "FireDamage"))
 		rz_set_tdata_float(pImpulse, "LastFire", pGameTime + rz_get_tdata_float(pImpulse, "FireAgain"))
 	}
 
