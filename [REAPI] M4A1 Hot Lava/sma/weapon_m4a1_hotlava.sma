@@ -35,8 +35,14 @@ public plugin_precache()
 
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_CYLINDER, true)
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_CYLINDER_COLOR, {255, 90, 10, 255})
+
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER, true)
+	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER_LIFE, 1)
+	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER_WIDTH, 3)
+
 	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER_COLOR, {255, 90, 10, 255})
+	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER_NOISE_MIN, 0)
+	set_weapon_var(pWeapon, RZ_WEAPON_BEAM_POINTER_NOISE_MAX, 2)
 
 	// Last fire time
 	rz_set_tdata_float(pWeapon, "LastFire", get_gametime())
